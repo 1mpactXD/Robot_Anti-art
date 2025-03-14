@@ -1,0 +1,11 @@
+@startuml
+class User
+
+User - Robot : Запуск/остановка двигателя >
+User -- Server : Пользовательский интерфейс >
+Robot -- Server : Перейти к граффити <
+Robot - Graffiti : Идет в граффити >
+Graffiti -- Server : Информация о граффити >
+Graffiti -- Camera : Обнаружение граффити <
+Server - Camera : Автоматическое управление >
+@enduml
