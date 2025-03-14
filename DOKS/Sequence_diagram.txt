@@ -1,0 +1,26 @@
+@startuml
+actor "Пользователь" as User
+actor "Сервер" as Server
+actor "Робот" as Robot
+
+User -> Server: Включить робота
+Server -> Robot: Включение
+
+User -> Server: Выключить робота
+Server -> Robot: Выключение
+
+Server -> Robot: Обрабатывать изображение с камер
+Robot -> Server: Изображение обработано
+
+Server -> Robot: Определение граффити
+Robot -> Server: Граффити обнаружено
+
+Server -> Robot: Распознание робота
+Robot -> Server: Робот распознан
+
+Server -> Robot: Отправить робота на место граффити
+Robot -> Server: Робот прибыл
+
+Robot -> Robot: Закрашивать граффити
+Robot -> Server: Граффити закрашено
+@enduml
