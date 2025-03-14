@@ -1,0 +1,25 @@
+@startuml
+skinparam actorStyle awesome
+"Пользователь" as User
+"Робот" as Robot
+package Robot{
+usecase "Включить" as (On)
+usecase "Выключить" as (Off)
+}
+
+:User: --> (On)
+:User: --> (Off)
+
+"Сервер" as Server
+"Обрабатывать изображение с камер" as (ReadCameraImage)
+"Определение граффити" as (RestrictedImageDetection)
+"Распознание робота" as (RecogniseRobot)
+"Отправить робота на место граффити" as (SendRobotToThePlace)
+"Закрашивать граффити" as (PaintOverGraffiti)
+
+:Server: --> (ReadCameraImage)
+:Server: --> (RestrictedImageDetection)
+:Server: --> (RecogniseRobot)
+:Server: --> (SendRobotToThePlace)
+:Robot: -> (PaintOverGraffiti)
+@enduml
